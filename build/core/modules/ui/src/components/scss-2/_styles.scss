@@ -1,0 +1,37 @@
+/*
+||||| COSMOS STYLES |||||
+
+Add Code style which is a component style for formatting code in containers.
+*/
+
+.co.outlined {
+    @include outlined;
+    // Temp use of color
+    color: $co-color-primary;
+    background: transparent;
+}
+
+.co.underlined { 
+    @include outlined;
+    // Noticed that using underlined in conjunction with a rounded button makes a very interesting result, as it rounds the border...
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom: $co-border_thickness solid currentColor;
+}
+
+.co.dashed {
+    @include outlined;
+    border-style: dashed;
+}
+.co.dotted {
+    @include outlined;
+    border-style: dotted;
+}
+.co.solid {
+    @include outlined;
+    border-style: solid;
+}
+
+
+.co.rounded.ends { border-radius: $co-radius_ends; }.co.rounded.corners { border-radius: $co-radius_corners; }

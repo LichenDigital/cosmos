@@ -1,0 +1,27 @@
+.co.icon {
+    display: inline-block;
+    // Size of icons need to be determined based on the parent elements font size, unless otherwise specified. Now that I think about this I don't know if this is possible due to selector specificity...
+    width: $co-icon-size;
+    height: $co-icon-size;
+    padding: $co-icon-padding 0; // Icon padding derived from current base font height and line height. Will need to figure out a way to handle different sizes of icons, and ensure that icons scale properly dependant on the size of the button they are contained inside, and that control sizing drives control element sizes. Luckily CSS is cascading, so we can utilize this to control child sizing.    
+    margin-right: $co-icon-margin-spacing; // Padding is created to the right, and spans are used for text within a button to ensure that psudo selectors can be used to manage margin in different circumstances.
+
+
+    fill: currentColor; // Separate into style class?
+
+    &:first-of-type {
+        margin-left: $co-control-element-padding-x;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:only-child {
+        padding: $co-icon-padding;
+    }
+}

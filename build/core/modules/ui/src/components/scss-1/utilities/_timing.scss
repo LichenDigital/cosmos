@@ -1,0 +1,23 @@
+/*
+||||| Animation timing variables |||||
+*/
+
+// Extra short
+$timing_extra-short: .1s;
+$tm_xs: $timing_extra-short; 
+
+// Short
+$timing_short: .2s;
+$tm_sm: $timing_short;
+
+// Medium
+$timing_medium: .5s;
+$tm_md: $timing_medium;
+
+// Long
+$timing_long: 4s;
+$tm_lg: $timing_long;
+
+// Extra long
+$timing_extra-long: 10s;
+$tm_xl: $timing_extra-long;

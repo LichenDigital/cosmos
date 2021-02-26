@@ -1,0 +1,124 @@
+/*
+||||| COSMOS SASS VARIABLES |||||
+
+Sizes for modifiers have been established as follows and will try to be followed as much as possible:
+
+    extra-small = xs
+    small = sm
+    medium = md
+    large = lg
+    extra-large = xl
+    
+    The naming convention above strives to be understandable, uniform, and flexible. In sitations where duration is used as upposed size (durration is kinda like the size of time), short is used instead of small, and long is used instead of large in the long form varients like so:
+
+    extra-short = xs
+    short = sh // this is the only difference between the short form used above, and the long form. Will consider changing this approach for consistancy...
+    medium = md
+    long = lg //  could be ln instead of lg to be different than large
+    extra-long = xl
+*/
+
+
+// COLORS
+$co-color-primary: #f1a864;
+$co-color-secondary: darken($co-color-primary, 10%);
+$co-color-tertiary: #aaa;
+
+$co-color-red: #f00;
+$co-color-red-purple: 0;
+$co-color-purple: 0;
+$co-color-blue-purple: 0;
+$co-color-blue: 0;
+$co-color-blue-green: 0;
+$co-color-green: 0;
+$co-color-yellow-green: 0;
+$co-color-yellow: 0;
+$co-color-yellow-orange: 0;
+$co-color-orange: 0;
+$co-color-red-orange: 0;
+
+// Cosmos will have a short list of available default color names available (or should it?). It should definitely have a way of handling theme colors (brand colors etc) and colors that are used accross the project to indicate positive and negative actions.
+
+$co-color-warning: 0;
+$co-color-danger: 0;
+$co-color-success: 0;
+$co-color-info: 0;
+$co-color-link: 0;
+$co-color-brown: 0;
+$co-color-tan: 0;
+
+
+$colors: (
+    "co-color-primary": $co-color-primary,
+    "co-color-secondary": $co-color-secondary,
+    "co-color-tertiary": $co-color-tertiary
+);
+
+// ||||| STRUCTURAL |||||
+$co-padding_xs: .2rem;
+$co-padding_sm: .4rem;
+$co-padding_md: 1.2rem;
+$co-padding_lg: 2rem;
+$co-padding_xl: 4rem;
+
+$co-margin_xs: $co-padding_xs;
+$co-margin_sm: $co-padding_sm;
+$co-margin_md: $co-padding_md;
+$co-margin_lg: $co-padding_lg;
+$co-margin_xl: $co-padding_xl;
+
+// ||||| TYPOGRAPHY |||||
+$co-font-family_primary: "Open Sans", sans-serif;
+$co-font-family_secondary: "Open Sans", sans-serif;
+$co-font-family_tertiary: "Open Sans", sans-serif;
+$co-font-scale: 62.5%; // Sets 1 rem to 10px. Basis for a sane use of REMs to size everything. Derived from browser defaults of 16px font size. 10px / 16px = .625
+
+$co-line-height: 1.5;
+
+// Base font size (for body) and varients
+$co-font-size_base: 1.6rem; // Base font size of the body (16px). Establishes a default font size (browsers default to 16px)
+$co-font-size_xs: 1.6rem;
+$co-font-size_sm: 1.6rem;
+$co-font-size_md: 1.6rem;
+$co-font-size_lg: 1.6rem;
+$co-font-size_xl: 1.6rem;
+
+// ||||| BUTTONS |||||
+// $co-button-padding_x: $co-padding_lg;
+// $co-button-padding_y: $co-button-padding_x * .6;
+$co-button-border_size: .2rem;
+
+// Font sizes for headers
+$co-font-size_h1: $co-font-size_base * 2.5;
+$co-font-size_h2: $co-font-size_base * 2;
+$co-font-size_h3: $co-font-size_base * 1.75;
+$co-font-size_h4: $co-font-size_base * 1.5;
+$co-font-size_h5: $co-font-size_base * 1.25;
+$co-font-size_h6: $co-font-size_base * 1;
+
+// ||||| STYLES |||||
+$co-rounded-corners: "enabled"; // Can be disabled or forced
+$co-rounded-ends: "enabled"; // Can be diabled or forced
+$co-border_thickness: .2rem;
+$co-radius_ends: 100rem;
+$co-radius_corners: .4rem;
+
+
+// ||||| INPUTS |||||
+$co-input-background: #fff;
+
+
+// ||||| CONTROL ELEMENTS ||||||
+$co-control-element-padding-x: $co-padding_lg;
+$co-control-element-padding-y: $co-control-element-padding-x * .6;
+
+// ||||| ICON PADDING |||||
+$co-icon-size: 1.25em;
+$co-icon-padding: (1em * $co-line-height - $co-icon-size) / 2;
+$co-icon-margin-spacing: $co-margin_md;
+
+// ||||| LAYERS |||||
+$co-layers: 0; // Will need to develop a method for handling layers (z-index)
+
+// ||||| LABELS |||||
+$co-label-padding-x: $co-padding_md;

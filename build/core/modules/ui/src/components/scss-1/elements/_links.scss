@@ -1,0 +1,59 @@
+/*
+||||| COSMOS LINKS |||||
+
+STYLE:
+    underlined - handled by co_underlined
+    highlighted
+
+STATE:
+    default (link)
+    visited
+    hover
+    active
+
+*/
+
+.co.link {
+    
+    &,
+    &:link {
+        text-decoration: none;
+        color: $co-color-primary;        
+    }
+    &:visited {
+        color: $co-color-secondary;
+    }
+    &:hover {
+        color: $co-color-primary;
+    }
+    &:active {
+        color: $co-color-primary;
+    }
+    
+    
+    &.highlighted {
+
+        &,
+        &:link {
+            background: $co-color-primary;
+            color: $co-color-tertiary;
+        }
+        &:visited {
+            color: $co-color-secondary;
+        }
+        
+        &:hover {
+            color: $co-color-tertiary;
+        }
+        
+        &:active {
+            color: $co-color-tertiary;
+        }
+    }
+    
+
+    
+
+}
+
+

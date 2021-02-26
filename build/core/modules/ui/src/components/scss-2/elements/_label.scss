@@ -1,0 +1,46 @@
+/*
+||||| COSMOS LABELS |||||
+
+Labels in cosmos have more uses than the traditional HTML element.
+
+They behave differently based on whether they are contained in a control, or if they are placed within other control elements like buttons, inputs, textareas, containers etc. (if contained in a control, they default to the same sizing of the other control elements (driven by the control itself). If it appears within a feildset, it will default to its text label format.
+
+These visual behaviors are to be designed as having certain location and context dependant visual appearances, while being abel to be overriden by classes or SASS variables.
+
+Or... Shall I develop a different term to only explicitly use label as it should be used... And use a different term like badge, tag, or detail...
+*/
+
+// Inner labels are not very usable, as actual labels of inputs go. For two reasons
+// 1. They can be confused for filled out form
+// 2. They can be overlooked
+
+// Not going to be used for now...
+// .co.label {
+//     position: absolute;
+//     z-index: 3;
+//     top: 50%;
+//     left: $co-control-element-padding-x;
+//     transform: translateY(-50%);
+//     background: #aaa;
+// }
+
+.co.label {
+
+    background: $co-color-tertiary;
+    padding: 0 $co-label-padding-x;
+    margin-right: $co-control-element-padding-x;
+
+    color: #fff;
+
+    &:first-of-type {
+        margin-left: $co-control-element-padding-x;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,32 @@
+@mixin border-radius() {
+    // Top
+    // Bottom
+    // Left
+    // Right
+    // All (default)
+}
+
+@mixin control-element() {
+    // Will add arguments to this mixin if needed for specifying which control element is inheriting the control element style
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: $co-control-element-padding-y $co-control-element-padding-x;
+
+    font-family: $co-font-family_primary;
+    font-size: $co-font-size_base;
+    color: inherit;
+    line-height: $co-line-height;
+    
+    border: solid $co-border_thickness transparent;
+    outline: none;
+
+    border-radius: 0;
+}
+
+@mixin outlined {
+    border: $co-border_thickness solid currentColor;
+}

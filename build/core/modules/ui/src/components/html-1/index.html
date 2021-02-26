@@ -1,0 +1,221 @@
+<!doctype html>
+
+<head>
+    <!-- Inclusion of mobile meta formatting information -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Inclusion of temp Fonts -->
+    <link rel="stylesheet" href="fonts.googleapis.com/css?family=Open+Sans:500,600,700.700i">
+
+    <!-- Inclution of Favicon (logo) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Inclusion of external animations -->
+    <link rel="stylesheet" href="external/css/animate.css">
+
+    <!-- Inlclusion of cosmos style code -->
+    <link rel="stylesheet" href="css/cosmos.css">
+
+    <title>cosmos UI Components</title>
+    
+</head>
+
+<body>
+
+    <svg viewBox="0 0 506.58 84.71" style="height: 5rem">
+        <use href="img/cosmos-combination-mark.svg#combination-mark"></use>
+    </svg>
+    <br><br>
+    <h1>cosmos web UI</h1>
+    <p>The cosmos web UI is a toolset for building responsive, modern, and beautiful web user interfaces. It utilizes SASS (compiled to CSS), javascript, and SVGs to provide elegant components for building web applications. Eventually it will be integrated into cosmos's backend and universal UI protocol.</p>
+    <p>
+            cosmos is:
+            * modular
+            * responsive
+            * beautiful
+            
+            * mobile first
+            * lightweight
+            * fast
+            * scalable
+            * customizable
+            * modern
+            
+            * visual styles
+            
+            * box-model
+            * flex-box
+            
+            
+    </p>
+    
+    <br><br>
+
+    <!-- COSMOS CONTROLS -->
+    <h1>controls</h1>
+    <br>
+    <p><strong>Controls are interactive component containers that are comprised of one or more smaller control elements.</strong>
+    <br>    
+    Interactive elements can be added or removed from a control, and can be programmed to behave differently while in a control. Control elements do not do anything by themselves (at least so far). Control elements are elements that can exist autonomously and are familiar HTML elements like buttons, inputs, select (dropdowns), and labels. Some elements like labels are more robust than they have traditionally been used for in HTML. They also behave and appear differently based on if they are contained within a another element like a button.</p>
+
+    <br><br>
+    <div class="co control rounded ends">
+        <input class="co input" placeholder="input...">
+        <button class="co button">button</button>
+    </div>
+
+    <br><br><br>
+
+    <h1>control elements</h1>
+    <br>
+
+
+    
+
+
+    <br><br>
+
+    <h2>inputs</h2>
+    <br>
+    <input class="co input">
+    <br><br>
+
+    <label class="co input">
+        <input class="co input" id="input-1">
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-image"></use></svg>
+    </label>
+
+    <label class="co input">
+        <input class="co input" id="input-1">
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-image"></use></svg>
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-arrow-down"></use></svg>
+    </label>
+
+    <label class="co input">
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-image"></use></svg>
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-file"></use></svg>
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-arrow-down"></use></svg>
+        <input class="co input" id="input-1">
+    </label>
+    <br><br>
+
+    <label class="co input rounded ends">
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-arrow-down"></use></svg>
+        <input class="co input" id="input-1">
+    </label>
+    <label class="co input rounded corners">
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-arrow-down"></use></svg>
+        <input class="co input" id="input-1">
+    </label>
+    <br><br>
+
+    <input class="co input outlined">
+    <label class="co input outlined rounded ends">
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-file"></use></svg>
+        <input class="co input" id="input-1">
+    </label>
+    <label class="co input outlined dashed">
+        <svg class="co icon"><use href="img/cosmos-icons.svg#co-arrow-down"></use></svg>
+        <input class="co input" id="input-1">
+    </label>
+    <br><br>
+
+
+
+
+    <h2>textArea</h2>
+    <textarea class="co textarea">
+
+    </textarea>
+    <h2>datalist</h2>
+    <input class="co datalist" list="options" id="datalist-1">
+    <datalist id="options">
+        <option>option 1</option>
+        <option>option 2</option>
+        <option>option 3</option>
+    </datalist>
+    <input class="co datalist" list="options-groups" id="datalist-2">
+    <datalist id="options-groups">
+        <optgroup label="optgroup1">
+            <option>option 1</option>
+            <option>option 2</option>
+            <option>option 3</option>
+        </optgroup>
+        <optgroup label="optgroup2">
+            <option>option 4</option>
+            <option>option 5</option>
+            <option>option 6</option>
+    </datalist>
+    <h2>select</h2>
+    <br>
+    <select class="co select">
+        <option>option 1</option>
+        <option>option 2</option>
+        <option>option 3</option>
+    </select>
+
+    <select class="co select">
+        <optgroup label="optgroup1">
+            <option>option 1</option>
+            <option>option 2</option>
+            <option>option 3</option>
+        </optgroup>
+        <optgroup label="optgroup2">
+            <option>option 4</option>
+            <option>option 5</option>
+            <option>option 6</option>
+        </optgroup>
+    </select>
+
+
+    <h2>checkbox</h2>
+    <h2>radio</h2>
+    <h2>output</h2>
+
+    <br><br>
+
+    <h2>label</h2>
+    <br><br>
+    <button class="co button">
+        <span>button</span>
+        <label class="co label">label</label>
+    </button>
+    <br><br>
+    
+    <label class="co input">
+        <input class="co input" id="input-1">
+        <span class="co label" for="input-1">label</span>
+    </label>
+    <br><br>
+
+    <label class="co input">
+        <span class="co label" for="input-1">label</span>
+        <input class="co input" id="input-1">
+    </label>
+    <br><br>
+
+    <div class="co control rounded corners">
+        <label class="co label">
+            label
+        </label>
+        <input class="co input" placeholder="input...">
+        <button class="co button">button</button>
+    </div>
+    
+    <br><br>
+    <h1>Links</h1>
+    <br>
+    Lorem ipsum dolor <a href="#" class="co link">co link</a> sit, amet consectetur adipisicing elit. Iure a vero delectus? Doloremque voluptas <a href="#1" class="co link underlined">co link underlined</a> quod quisquam aperiam excepturi ipsum rem <a href="#2" class="co link highlighted rounded-corners">co link highlighted</a> dignissimos <a href="#3" class="co link underlined highlighted">co link underlined highlighted</a> officiis inventore vero, ex optio deserunt accusantium consequuntur laudantium!
+    
+    <br><br>
+    
+    <h1>Development Notes</h1>
+    <p>Could possibly use <a href="http://interactjs.io/">http://interactjs.io</a> / to provide interactions until replacement or merge can be done.</p>
+
+</body>

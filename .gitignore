@@ -1,3 +1,10 @@
+# Basic files
+*.DS_Store
+node_modules/
+.sass-cache/
+package.json
+target/
+
 # Object files
 *.o
 *.ko
@@ -30,3 +37,54 @@
 
 # Debug files
 *.dSYM/
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+
+# #### Need to know how the above rules work? Check out the below .gitignore basics:
+# .gitignore entry  	Ignores every…
+# target/	            …folder (due to the trailing /) recursively
+# target	            …file or folder named target recursively
+# /target	            …file or folder named target in the top-most directory (due to the leading /)
+# /target/            	…folder named target in the top-most directory (leading and trailing /)
+# *.class               …every file or folder ending with .class recursively
+
+# #### Advanced .gitignore stuff:
+# .gitignore entry	    Ignores every…
+# #comment      	    …nothing, this is a comment (first character is a #)
+# \#comment	            …every file or folder with name #comment (\ for escaping)
+# target/logs/	        …every folder named logs which is a subdirectory of a folder named target
+# target/*/logs/    	…every folder named logs two levels under a folder named target (* doesn’t include /)
+# target/**/logs/	    …every folder named logs somewhere under a folder named target (** includes /)
+# *.py[co]          	…file or folder ending in .pyc or .pyo. However, it doesn’t match .py!
+# !README.md        	Doesn’t ignore any README.md file even if it matches an exclude pattern, e.g. *.md. NOTE: This does not work if the file is located within a ignored folder.

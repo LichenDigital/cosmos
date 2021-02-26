@@ -1,0 +1,53 @@
+html {
+	height: 100%; /*Ensures that the background is stretched completely*/
+	background: url(../images/galaxy.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+@font-face {
+	font-family: Governor;
+	src: url('../fonts/Governor.ttf') format('truetype');
+}
+h1 {
+	position: absolute;
+	overflow: visible;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    white-space: nowrap;
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	font-family: Governor, sans-serif;
+	text-align: center;
+	text-shadow: 0px 2px 4px #000 ;
+}
+@media screen and (max-width: 365px) {
+	h1 {
+		font-size: 2.5em;
+	}
+}
+@media screen and (min-width:366px) and (max-width: 450px) {
+	h1 {
+		font-size: 3.4em;
+	}
+}
+@media screen and (min-width:451px) and (max-width: 600px) {
+	h1 {
+		font-size: 4.2em;
+	}
+}
+@media screen and (min-width: 601px) and (max-width: 775px) {
+	h1 {
+		font-size: 5.3em;
+	}
+}
+@media screen and (min-width: 776px) {
+	h1 {
+		font-size: 7em;
+	}
+}

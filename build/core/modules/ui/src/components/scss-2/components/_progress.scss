@@ -1,0 +1,24 @@
+/*
+||||| PROGRESS ELEMENTS |||||
+
+SHAPES:
+    rectangle (default)
+    circle
+
+VARIENTS:
+    solid (default)
+    outline
+    borderless (solid w/o background fill)
+
+MODIFIERS:
+    round-corners
+    round-ends
+
+DEVELOPER NOTES
+
+IDEAS
+- Progress bars can be made up of smaller progress bars. Aka, if you have multiple files you're uploading, they can be represented by smaller segments within the progress bar. This is also helpful for displaying areas of buffered video. Also it is similarly useful when displaying what chunks of a file have been downloaded in peer to peer transfers when files are not downloaded in a continuous stream. Also it would be useful when displaying what sections of a file have changed etc...
+*/
+
+.co-progress {
+}

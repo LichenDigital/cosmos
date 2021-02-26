@@ -1,0 +1,23 @@
+html {
+    box-sizing: border-box; // Generally desired behavior
+    font-size: $co-font_scale;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; // Can overrize box-sizing on a component level with this being an inherited property
+}
+
+body {
+    box-sizing: inherit;
+    font-size: $co-font-size_base;
+    font-family: $co-font-family_primary;
+    line-height: $co-line-height;
+}
+
+.co.demo {
+
+}

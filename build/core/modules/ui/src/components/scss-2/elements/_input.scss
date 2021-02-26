@@ -1,0 +1,43 @@
+/*
+||||| COSMOS INPUTS |||||
+
+SHAPES:
+    rectangle
+    square
+    circle (experimental)
+
+VARIENTS:
+    bordered (default)
+    solid
+    outlined
+    underlined
+
+MODIFIERS:
+    rounded-corners
+    rounded-ends
+
+STATES:
+    hover
+    active
+    focus
+
+DELOPMENT NOTES:
+    Much like buttons, input fields can contain icons and labels, and be used in controls. They can have outer labels in feilds and have inner placeholders (or have inner labels that move when focused or filled.)
+
+    I need to make a decision on default input styling.
+
+*/
+
+// Control is the container for all button, input, select, 
+
+.co.input {
+    @include control-element;
+    background: #fff;
+}
+
+.co.input .input{
+    border: none;
+    padding: 0;
+    background: #eee;
+    background: transparent;
+}

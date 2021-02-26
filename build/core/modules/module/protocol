@@ -1,0 +1,285 @@
+cosmos
+
+send
+  <- push
+
+recv
+  <- pull
+
+module
+  execute
+  hash
+
+command
+  cosmos
+
+crypt
+  libsodium
+
+lang
+
+database (create, read, update, delete)
+  cosmos
+  arangodb
+  mongodb
+  neo4j
+
+benchmark
+
+currency
+    bitcoin
+
+compile
+  g++
+  clang
+
+interprit [inter]
+
+execute
+  c
+  c++
+  python
+  ruby
+  php
+  erlang
+  haskill
+  java
+  javascript
+    nodejs
+  html
+  lua
+  assembly
+  fortran
+  gcode
+
+version
+  cosmos
+  git
+  svn
+
+message
+
+vm
+  openbox
+
+
+
+hash
+  md
+  sha0
+  sha1
+    <- sha-160
+  sha2 (sha-224, sha-256, sha-384, sha-512)
+  sha3
+
+comproc [communication protocol]
+  0mq
+  ftp
+  http
+  imap
+  pop
+  ipc
+  telnet
+  rtp
+  rtsp
+  smtp
+  ssh
+  bittorrent
+  binary
+  mms
+  irc
+
+compress
+  zlib
+  zip
+  lzma
+  delta
+
+move
+
+copy
+
+bittorrent
+
+email
+  imap
+  pop
+  smtp
+
+ssh
+    
+http
+
+ftp
+
+dns
+  dnsmasq
+  bind
+  dnsmasq
+
+dhcp
+  dnsmasq
+
+firewall
+  iptables
+
+file (create, read, update, delete)
+  filesystem
+
+filesystem
+  ntfs
+  hfs
+  hfs+
+  fat
+  exfat
+  ext
+  ext2
+  ext3
+  ext4
+  bfs
+  udf
+  ufs
+  ufs2
+  reiserfs
+  reiser4
+
+nat
+  iptables
+  ice
+  turn
+  stun
+
+
+diff (local, remote)
+  <- delta
+    cosmos
+    diff
+    FC //windows
+
+http
+  apache
+  nginx
+  mongrel
+  mongrel2
+  iis
+  lighthttpd
+  mongoose
+
+audio
+
+image
+
+video
+    vlc
+
+print
+  digital
+  screen  
+  laser
+  3d
+  cnc
+
+temp
+
+humid [humidity]
+
+command 
+  ansible
+  salt
+  chef
+  puppet
+  babushka
+
+vapor
+
+material
+
+heat
+
+motor
+
+light
+
+voltage
+
+amperage
+
+wattage
+
+resistance
+
+accellerometer
+
+browsersync
+
+cms
+  wordpress
+  drupal
+
+layout
+  font
+  line
+  circle
+  3D
+
+font
+  type-face
+  size
+  style
+  kern
+
+network
+  linux
+  windows
+  osx
+  bsd
+  solaris
+
+
+wireless
+  broadcom
+  atheros
+  intel
+  realtek
+
+ethernet
+  broadcom
+  atheros
+  intel
+  realtek
+
+infrered
+
+linux
+  arch
+  ubuntu
+  fedora
+  mint
+  puppy
+  redhat
+  ddwrt
+  openwrt
+
+cpu
+  chipset
+    intel
+    amd
+    arm
+
+graphics
+  2d
+  3d
+  gpu
+
+gpu
+  nvidia
+  intel
+  ati
+  amd
+  exenos
+
+cellular
+
+fm
+
+am
