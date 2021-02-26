@@ -1,10 +1,4 @@
-```
-   o---o     o---o      o--o    o     o     o---o      o--o   
-  /         /     \    |        | \ / |    /     \    |       
- o         o       o    o-o     |  O  |   o       o    o-o    
-  \         \     /        |    |     |    \     /        |   
-   o---o     o---o     o--o     o     o     o---o     o--o 
-```   
+!(cosmos logo on nebula background)[documentation/images/cosmos-logo-backdrop.jpg]
 
 # cosmos - a distributed open source application framework
 
