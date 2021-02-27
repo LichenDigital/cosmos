@@ -1,6 +1,6 @@
 <template lang="pug">
-  .co-input
-    input
+.co-input
+  input
 </template>
 
 <style lang="scss" scoped>
