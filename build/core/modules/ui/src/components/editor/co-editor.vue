@@ -1,7 +1,8 @@
 <template lang="pug">
-coComponents
-coWorkspace
-coStyle
+.co-editor
+  coComponents
+  coWorkspace
+  coStyle
 </template>
 
 <script lang="ts">
@@ -18,3 +19,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .co-editor {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+</style>
