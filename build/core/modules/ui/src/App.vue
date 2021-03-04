@@ -18,20 +18,21 @@ export default defineComponent({
 <style lang="scss">
 
 *, *::before, *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: inherit;
 }
 
 html {
   box-sizing: border-box;
+  font-size: (10px / 16px) * 100%;
 }
 
 body {
-  padding: 0;
-  margin: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  font-size: 1.4rem;
 }
 .co-group {
   position: relative;
