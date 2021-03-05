@@ -1,17 +1,27 @@
 <template lang="pug">
 .co-components.co-group
-  .co-panel-label components
-  coButton(:link='{destination: "https://lichen.co"}') test
+  h2.co-panel-label components
+  h3 button
+  coButton(:link='{destination: "https://lichen.co"}') button
+  h3 textInput
+  h3 progress
+  coProgress
+  h3 link
+  h3 text
+
+
 </template>
 
 <script lang="ts">
 
 import coButton from '../co-button.vue';
+import coProgress from '../co-progress.vue';
 
 export default {
   name: 'components',
   components: {
-    coButton
+    coButton,
+    coProgress
   }
 }
 </script>
