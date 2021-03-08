@@ -17,13 +17,9 @@
 </template>
 
 <script lang="ts">
-import CoInput from '../co-input.vue';
 
 export default {
   name: 'co-style',
-  components: {
-    'co-input': CoInput
-  }
 }
 </script>
 

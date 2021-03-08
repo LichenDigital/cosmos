@@ -3,11 +3,32 @@
   h2.co-panel-label components
   h3 button
   coButton(:link='{destination: "https://lichen.co"}') button
-  h3 textInput
+  h3 textinput
+  h3 checkbox
+  h3 radiobutton
+  h3 slider
   h3 progress
   coProgress
+  h3 upload
   h3 link
-  h3 text
+  h3 datepicker
+  h3 calendar
+  h3 colorpicker
+  h3 graph
+  h3 heading
+  h3 paragraph
+  h3 link
+  h3 quote
+  h3 list
+  h3 table
+  h3 icon
+  h3 image
+  h3 video
+  h3 audio
+  h3 thumbnail
+  h3 dropdown
+  h3 navigation
+  h3 map
 
 
 </template>

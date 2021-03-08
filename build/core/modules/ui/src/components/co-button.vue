@@ -8,7 +8,7 @@ button.button(v-else)
 <script>
 
 export default {
-  name: 'button',
+  name: 'coButton',
   props: [
     'link'
   ],
