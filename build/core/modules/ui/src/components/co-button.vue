@@ -1,17 +1,24 @@
 <template lang="pug">
-a.button(v-if='link' :href='link.destination' :target='link.newWindow === true && link.destination ? "_blank" : null')
+a.button(v-if='link' :href='link.destination' :target='newWindow')
   slot
 button.button(v-else)
   slot
 </template>
 
-<script>
+<script lang="ts">
 
-export default {
+import { defineComponent } from 'vue';
+
+interface LinkInterface {
+  destination: string;
+  newWindow: boolean;
+}
+
+export default defineComponent({
   name: 'coButton',
-  props: [
-    'link'
-  ],
+  props: {
+    link: { type: Object as () => LinkInterface }
+  },
   data: function() {
     return {
       width: null,
@@ -32,8 +39,15 @@ export default {
           ]
         }
       ]
-
-
+    }
+  },
+  computed: {
+    newWindow(): string | null  {
+      if (this.link?.newWindow && this.link?.destination) {
+        return '_blank';
+      } else {
+        return null;
+      }
     }
   }
   // Need to itentify all common properties we'll need to make available to all components, and then we can probably pull that array in and load it into the props, and merge it with any component specific props
@@ -66,7 +80,7 @@ export default {
   //     hash - Grants you the ability to target buttons that are all the same
   //     groups - You've discovered the power to group items together
   // props: ['sizing', 'spacing', 'alignment', 'position', 'links', 'labels', 'icons', 'state', 'groups', 'id', 'hash']
-}
+})
 </script>
 
 

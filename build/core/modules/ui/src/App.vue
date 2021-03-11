@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 .co-group {
   position: relative;
   padding: 1rem;
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
 .co-logo {
   width: 20rem;

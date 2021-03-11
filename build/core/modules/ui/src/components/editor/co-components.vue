@@ -2,13 +2,20 @@
 .co-components.co-group
   h2.co-panel-label components
   h3 button
-  coButton(:link='{destination: "https://lichen.co"}') button
+  component(v-for='component, l in components' :v-key='l', :is='component.type', :link='component.link') {{ component.contents[0] }}
   h3 textinput
   h3 checkbox
   h3 radiobutton
   h3 slider
+
   h3 progress
-  coProgress
+  //- Progress examples
+  //- coProgress(:bars='[[0, "10"], [40, "40%"], [250, 450], ["50%", "60%"]]' :range='90')
+  //- coProgress(:bars='[[0, "40%"]]' :range='100')
+  div window width: {{ width }} x position: {{ xposition }}
+  coProgress(:bars='[[xposition]]' :range='width')
+  div window height: {{ height }} y position: {{ yposition }}
+  coProgress(:bars='[[yposition]]' :range='height')
   h3 upload
   h3 link
   h3 datepicker
@@ -35,16 +42,67 @@
 
 <script lang="ts">
 
+import { defineComponent } from 'vue';
+
 import coButton from '../co-button.vue';
 import coProgress from '../co-progress.vue';
 
-export default {
+export default defineComponent({
   name: 'components',
   components: {
     coButton,
     coProgress
+  },
+  data () {
+    return {
+      components: [
+        { type: 'coButton',
+          link: {
+            destination: 'https://lichen.co',
+            newWindow: true
+          },
+          contents: [
+            'hello'
+          ]
+        },
+        { type: 'coButton',
+          link: {
+            destination: 'https://vuejs.org',
+            newWindow: true
+          },
+          contents: [
+            'world'
+          ]
+        },
+        { type: 'coButton',
+          contents: [
+            'buttons'
+          ]
+        }
+      ],
+      width: 0,
+      xposition: 0,
+      height: 0,
+      yposition: 0,
+    }
+  },
+  methods: {
+    mouseMoved(event: any) {
+      // On mouse move, get mouse x and y position, and set those to x and y positions in the 
+      this.yposition = event.clientY;
+      // console.log(`yposition: ${this.yposition}`);
+      this.xposition = event.clientX;
+      // console.log(`xposition: ${this.xposition}`);
+    }
+  },
+  mounted() {
+    // Get size of screen and store
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    // Set mouse move event
+    document.addEventListener('mousemove', this.mouseMoved);
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
