@@ -31,6 +31,13 @@ export default defineComponent({
         ngon: null,
         path: null
       },
+      style: {
+        border: {
+          width: '0px',
+          dash: [10, 50, 100, 30],
+          color: '',
+        }
+      },
       actions: [
         {
           reference: 'hash |or| id |or| group |or| id &and& group |or| group &and& group etc.',
@@ -55,11 +62,8 @@ export default defineComponent({
   // General properties
 
   // Link
-  // Labels - list
-  // Icons - list
   // Actions
   // States
-
   
   // Color
   // Sizing
@@ -67,13 +71,14 @@ export default defineComponent({
   // Alignment
 
   // Typography
+    // Color
+    // Sizing
+    // Spacing
+      // Inner
+    // Weight
 
-  // Color
-  // Sizing
-  // Spacing
-    // Inner
-  
-  // Weight
+  // Labels - list
+  // Icons - list
 
   // COMMON COSMOS ACTIONS AND DATA
   //     id - Grants you the ability to know where something came from and you can interact with and control a specific button

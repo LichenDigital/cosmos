@@ -4,8 +4,14 @@
   h3 button
   component(v-for='component, l in components' :v-key='l', :is='component.type', :link='component.link') {{ component.contents[0] }}
   h3 textinput
+  coTextInput(:lines='1')
+  coTextInput(:lines='2')
   h3 checkbox
+  coCheckbox(:checkmark='"image"')
+  coCheckbox(:checkmark='"check"')
   h3 radiobutton
+  coRadioButton(:group='"group1"', :value='1', :label='1')
+  coRadioButton(:group='"group1"', :value='2', :label='2')
   h3 slider
 
   h3 progress
@@ -16,6 +22,8 @@
   coProgress(:bars='[[xposition]]' :range='width')
   div window height: {{ height }} y position: {{ yposition }}
   coProgress(:bars='[[yposition]]' :range='height')
+  h3 loading
+  coLoading
   h3 upload
   h3 link
   h3 datepicker
@@ -46,12 +54,20 @@ import { defineComponent } from 'vue';
 
 import coButton from '../co-button.vue';
 import coProgress from '../co-progress.vue';
+import coLoading from '../co-loading.vue';
+import coTextInput from '../co-textinput.vue';
+import coCheckbox from '../co-checkbox.vue';
+import coRadioButton from '../co-radiobutton.vue';
 
 export default defineComponent({
   name: 'components',
   components: {
     coButton,
-    coProgress
+    coProgress,
+    coLoading,
+    coTextInput,
+    coCheckbox,
+    coRadioButton
   },
   data () {
     return {

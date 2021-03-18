@@ -57,5 +57,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
   font-weight: bold;
   opacity: 40%;
+  white-space: pre-wrap;
 }
 </style>

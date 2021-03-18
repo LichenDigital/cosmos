@@ -142,10 +142,10 @@ export default defineComponent({
                 break;
               case 1:
                 // If it's our second
-                // Check to make sure it's larger than our first number
-                if ( !(currentNumber > currentNumbers[0]) ) {
+                // Check to make sure it's larger or equal than our first number
+                if ( !(currentNumber >= currentNumbers[0]) ) {
                   errorCaught = true;
-                  errors.push(`Our second number (${currentNumber}) is not larger than our first (${currentNumbers[0]})`);
+                  errors.push(`Our second number (${currentNumber}) is not larger than or equal to our first (${currentNumbers[0]})`);
                 }
                 // Calculate the difference between them, which will become our width
                 currentNumbers[i] = calculateDiff(currentNumbers[0], currentNumber);
