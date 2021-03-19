@@ -13,7 +13,7 @@
   coRadioButton(:group='"group1"', :value='1', :label='1')
   coRadioButton(:group='"group1"', :value='2', :label='2')
   h3 slider
-
+  coSlider
   h3 progress
   //- Progress examples
   //- coProgress(:bars='[[0, "10"], [40, "40%"], [250, 450], ["50%", "60%"]]' :range='90')
@@ -52,12 +52,13 @@
 
 import { defineComponent } from 'vue';
 
-import coButton from '../co-button.vue';
+import coButton from '../co-inputs/co-button.vue';
 import coProgress from '../co-progress.vue';
 import coLoading from '../co-loading.vue';
-import coTextInput from '../co-textinput.vue';
-import coCheckbox from '../co-checkbox.vue';
-import coRadioButton from '../co-radiobutton.vue';
+import coTextInput from '../co-inputs/co-textinput.vue';
+import coCheckbox from '../co-inputs/co-checkbox.vue';
+import coRadioButton from '../co-inputs/co-radiobutton.vue';
+import coSlider from '../co-inputs/co-slider.vue';
 
 export default defineComponent({
   name: 'components',
@@ -67,7 +68,8 @@ export default defineComponent({
     coLoading,
     coTextInput,
     coCheckbox,
-    coRadioButton
+    coRadioButton,
+    coSlider
   },
   data () {
     return {

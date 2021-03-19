@@ -7,7 +7,7 @@ div.co-checkbox
 <script lang="ts">
 
 import { defineComponent } from 'vue';
-import coIcon from './co-icon.vue';
+import coIcon from '../co-icon.vue';
 
 export default defineComponent({
   name: 'coCheckbox',
@@ -30,34 +30,35 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: none;
-  border: 2px solid black;
   width: 2rem;
   height: 2rem;
-  padding: 2px;
-  background: white;
+  padding: 4px;
   margin-bottom: 1rem;
 
   input {
-    position: absolute;
-    top: 0; left: 0;
-    cursor: pointer;
+    border: 2px solid black;
     width: 100%;
     height: 100%;
-    opacity: 0;
+    background: white;
+    appearance: none;
+    outline: none;
+    position: absolute;
+    top: 0; left: 0;
 
     &:checked ~ .co-checkmark {
       opacity: 1;
     }
 
     &:focus {
-      border-color: red;
+      box-shadow: 0 0 0 2px #888;
     }
   }
 
   .co-checkmark {
-    opacity: 0;
-    pointer-events: none;
+      position: relative;
+      opacity: 0;
+      z-index: 1;
+      pointer-events: none;
   }
 }
 </style>

@@ -8,7 +8,7 @@ label(v-if='label') {{ label }}
 <script lang="ts">
 
 import { defineComponent } from 'vue';
-import coIcon from './co-icon.vue';
+import coIcon from '../co-icon.vue';
 
 export default defineComponent({
   name: 'coRadioButton',
@@ -51,7 +51,7 @@ export default defineComponent({
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    padding: 4px;
+    padding: 6px;
 
     input {
       border: 2px solid black;
@@ -64,8 +64,8 @@ export default defineComponent({
       position: absolute;
       top: 0; left: 0;
 
-      &:checked {
-        box-shadow: 0 0 0 2px red;
+      &:focus {
+        box-shadow: 0 0 0 2px #888;
       }
       
       &:checked ~ .co-pickmark {

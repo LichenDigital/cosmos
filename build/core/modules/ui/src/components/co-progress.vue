@@ -193,7 +193,7 @@ export default defineComponent({
   width: 0;
   background: rgba(0,0,0, .4);
   height: 100%;
-  transition: left .1s ease, width .3s ease;
+  // transition: left .1s ease, width .3s ease;
 }
 .rounded-ends {
   border-radius: 100px;

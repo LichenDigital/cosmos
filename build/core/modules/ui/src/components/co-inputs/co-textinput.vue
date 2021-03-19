@@ -42,7 +42,7 @@ input, textarea {
   font-family: sans-serif;
 
   &:focus {
-    border-color: red;
+    box-shadow: 0 0 0 2px #888;
   }
 }
 
