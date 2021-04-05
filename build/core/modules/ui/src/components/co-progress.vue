@@ -1,31 +1,40 @@
 <template lang="pug">
 //- Need to work in optional progress amount indicators inside and externally for the progress bar
 .progress(v-if='bars && range')
-  .bar(v-for='(bar, l) in barsGenerated' :key='l' :style='{left: bar[0], width: bar[1]}')
+  .background(
+    :style='{background: progressBackground}'
+    @click='$emit("selectElement", {element: "progress", event: $event})')
+  .bar(
+    v-for='(bar, l) in barsGenerated'
+    :key='l'
+    :style='{left: bar[0], width: bar[1]}'
+    @click='$emit("selectElement", {element: "bar", bar: l, event: $event})')
     //- span {{ bar[0] }} {{ bar[1] }} used currently for debugging, will implement good solution for it soon
 </template>
 
 <script lang="ts">
 
+import { log } from '../cosmos';
+
 /** Convert string to a number */
 function convertToNumber(value: string): number {
-  // console.log(`Converting ${value} to number`);
+  log('extraverbose', `Converting ${value} to number`);
   return parseFloat(value);
 }
 
 /** Convert number to percentage given our range*/
 function convertToPercentage(value: number, range: number): string {
-  // console.log(`Converting ${value} to percentage within range (${range})`);
+  log('extraverbose', `Converting ${value} to percentage within range (${range})`);
   return value / range * 100 + '%';
 }
 
 /** Validate percentage */
 function validatePercentage(value: string): boolean {
   if ( !value.match(/^((\d+(\.\d*)?))%$/) ) {
-    // console.log(`Value provided is not valid percentage (${value})`)
+    log('extraverbose', `Value provided is not valid percentage (${value})`)
     return false;
   }
-  // console.log(`Value is percentage (${value})`);
+  log('extraverbose', `Value is percentage (${value})`);
   return true;
 }
 
@@ -44,6 +53,18 @@ function calculateDiff(value1: number, value2: number): number {
   return value2 - value1;
 }
 
+// TODO: Implement the adjustment following (allowing for a general setting, and individual overrides)
+// - height of the bars
+// - height of the progress element
+// - color of the bars / progress
+// - border style of the bars / progress
+// - corner / end conditions of the bars (rounded or round or square)
+// - provide a slot for inside the bars
+// - provide a slot for inside the progress
+// - think about having some sort of ability to replace the bar with an SVG so that it can be animated (think of a giggly bar)
+// I think that the solution to individual bar manipulation / styling may lie in having an internal list of bars, so that bars can be provided in the prop as either an array with a start and end point, or an object with a start, end, and style property etc. That way if the user can keep it super simple and pass in an array of data, with the style for the bars being dictated globally, but they can also override the style of each bar if they pass in an object instead of an array with extra info
+
+
 import { defineComponent } from 'vue';
 
 type barInterface = (string | number)[][];
@@ -58,6 +79,16 @@ export default defineComponent({
     bars: {
       type: Array as () => barInterface
     },
+    progressBackground: {
+      type: String
+    },
+    // FIXME: figure out why the default is interfering with the other props for some reason....
+    // progressStyle: {
+    //   type: Object,
+    //   default() {
+    //     return { background: '#f00' };
+    //   },
+    // },
     // TODO: Implement direction
     // direction: {
     //   type: String,
@@ -79,13 +110,13 @@ export default defineComponent({
       const barsConverted: string[][] = [];
       // Set range to be expected as a number
       const range: number = this.range;
-      // console.log(`range: ${range}`);
+      log('extraverbose', `range: ${range}`);
       if (this.bars && range) {
         // Loop through the bars, and generate offsets and percentages
         this.bars.forEach( function(bar) {
           // Get length of barsConverted, and use that to set l for index
           const l = barsConverted.length;
-          // console.log(`Currently on bar ${l}`);
+          log('extraverbose', `Currently on bar ${l}`);
           // // Assign empty array to bar l
           barsConverted[l] = [];
           // Create an array to store our intermediary numbers
@@ -110,7 +141,7 @@ export default defineComponent({
             let currentNumber: number;
 
             // Check if number or string
-            // console.log(`Checking value ${i} for bar ${l}`);
+            log('extraverbose', `Checking value ${i} for bar ${l}`);
             switch (typeof value) {
               case 'string':
                 // Convert string to number
@@ -118,7 +149,7 @@ export default defineComponent({
                 // Convert currentnumber, if it's provided in a percentage format, to its equvelant is within the current range. 25% of 200 would be 50, where as 25% of 100 would be 25
                 if (validatePercentage(value)) {
                   currentNumber = currentNumber / 100 * range;
-                  // console.log(`Converted percentage value (${value}) to proper currentNumber (${currentNumber}) based on range (${range})`);
+                  log('extraverbose', `Converted percentage value (${value}) to proper currentNumber (${currentNumber}) based on range (${range})`);
                 }
                 break;
               case 'number':
@@ -129,7 +160,7 @@ export default defineComponent({
             
             // Check if our number is within our range
             if ( !validateRange(currentNumber, [0, range])) {
-              // console.log(`Number (${currentNumber}) is not within range (${range})`);
+              log('extraverbose', `Number (${currentNumber}) is not within range (${range})`);
               errorCaught = true;
               errors.push(`currentNumber (${currentNumber}) is outside our range (${range})`);
             }
@@ -155,16 +186,16 @@ export default defineComponent({
             // Check if we encountered any errors
             if (errorCaught) {
               // Check bars before removal
-              // console.log(`barsConverted before removal: ${barsConverted}`);
+              log('extraverbose', `barsConverted before removal: ${barsConverted}`);
               // Remove bar l
               const removedBar = barsConverted.splice(l, 1);
-              // console.log(`Errors have been encountered on processing current value (${currentNumber}) of bar ${l}, removed bar ${l} (${removedBar}) from barsConverted (${barsConverted})`);
-              // console.log(`Errors encountered: ${errors}`);
+              log('extraverbose', `Errors have been encountered on processing current value (${currentNumber}) of bar ${l}, removed bar ${l} (${removedBar}) from barsConverted (${barsConverted})`);
+              log('extraverbose', `Errors encountered: ${errors}`);
             } else {
               // Store the converted / validated percentage in the bars array to be returned
-              // console.log(`Storing value ${i} in bar ${l}`);
+              log('extraverbose', `Storing value ${i} in bar ${l}`);
               barsConverted[l][i] = convertToPercentage(currentNumbers[i], range);
-              // console.log(`Stored the percentageOutput (${barsConverted[l][i]}) in barsConverted (${barsConverted})`);
+              log('extraverbose', `Stored the percentageOutput (${barsConverted[l][i]}) in barsConverted (${barsConverted})`);
             }
           })
         });
@@ -182,17 +213,24 @@ export default defineComponent({
 
 .progress {
   position: relative;
-  height: 2rem;
-  background: #ccc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+}
+.background {
+  height: 100%;
   width: 20rem;
-  overflow: hidden;
+  background: #ccc;
 }
 .bar {
   position: absolute;
-  top: 0;
+  top: 50%;
   width: 0;
   background: rgba(0,0,0, .4);
-  height: 100%;
+  height: 50%;
+  transform: translateY(-50%);
+  // pointer-events: none;
   // transition: left .1s ease, width .3s ease;
 }
 .rounded-ends {

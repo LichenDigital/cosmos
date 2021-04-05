@@ -21,22 +21,34 @@ export default defineComponent({
   },
   data: function() {
     return {
-      width: null,
-      height: null,
-      shape: {
-        rectangle: null,
-        square: null,
-        triangle: null,
-        circle: null,
-        ngon: null,
-        path: null
-      },
+      id: null,
+      group: null,
+      nodes: [
+        {
+          type: 'text',
+          content: 'hello'
+        },
+        {
+          type: 'icon',
+          content: 'check-mark'
+        }
+      ],
       style: {
         border: {
           width: '0px',
           dash: [10, 50, 100, 30],
           color: '',
-        }
+        },
+        width: null,
+        height: null,
+        shape: {
+          rectangle: null,
+          square: null,
+          triangle: null,
+          circle: null,
+          ngon: null,
+          path: null
+        },
       },
       actions: [
         {

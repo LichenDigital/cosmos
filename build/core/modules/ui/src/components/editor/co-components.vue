@@ -5,7 +5,7 @@
   component(v-for='component, l in components' :v-key='l', :is='component.type', :link='component.link') {{ component.contents[0] }}
   h3 textinput
   coTextInput(:lines='1')
-  coTextInput(:lines='2')
+  coTextInput(:lines='4')
   h3 checkbox
   coCheckbox(:checkmark='"image"')
   coCheckbox(:checkmark='"check"')
@@ -16,16 +16,20 @@
   coSlider
   h3 progress
   //- Progress examples
-  //- coProgress(:bars='[[0, "10"], [40, "40%"], [250, 450], ["50%", "60%"]]' :range='90')
-  //- coProgress(:bars='[[0, "40%"]]' :range='100')
-  div window width: {{ width }} x position: {{ xposition }}
+  p single bar
+  coProgress(:bars='[[0, "40%"]]' :range='200' :progressBackground='"#f00"')
+  p multiple bars in one progress
+  //- pre coProgress(:bars='[[0, "10"], [40, "60%"], [250, 450], ["50%", "60%"]]' :range='90')
+  coProgress(:bars='[[0, "10"], [40, "60%"], [250, 450], ["50%", "60%"]]' :range='90')
+  p progress hooked up a single bar to x position of mouse as a demo
   coProgress(:bars='[[xposition]]' :range='width')
-  div window height: {{ height }} y position: {{ yposition }}
-  coProgress(:bars='[[yposition]]' :range='height')
+  p progress hooked up to two bars both x position of mouse and y position of mouse in the same progress
+  //- div window width: {{ width }} x position: {{ xposition }}
+  //- div window height: {{ height }} y position: {{ yposition }}
+  coProgress(:bars='[[0, xposition], [width, width + yposition]]' :range='height + width')
   h3 loading
   coLoading
   h3 upload
-  h3 link
   h3 datepicker
   h3 calendar
   h3 colorpicker
