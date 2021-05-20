@@ -77,6 +77,7 @@ export default defineComponent({
       required: true
     },
     bars: {
+      // TODO: Create internal array to store state in percentages and emit those when changed...
       type: Array as () => barInterface
     },
     progressBackground: {

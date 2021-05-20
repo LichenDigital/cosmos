@@ -3,6 +3,7 @@
   h2.co-panel-label components
   h3 button
   component(v-for='component, l in components' :v-key='l', :is='component.type', :link='component.link') {{ component.contents[0] }}
+  coButton(@click='increment')
   h3 textinput
   coTextInput(:lines='1')
   coTextInput(:lines='4')
@@ -115,6 +116,10 @@ export default defineComponent({
       // console.log(`yposition: ${this.yposition}`);
       this.xposition = event.clientX;
       // console.log(`xposition: ${this.xposition}`);
+    },
+    increment() {
+      this.$store.commit('increment');
+      console.log(this.$store.state.count);
     }
   },
   mounted() {

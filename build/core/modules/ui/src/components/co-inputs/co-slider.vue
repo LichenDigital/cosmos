@@ -3,13 +3,30 @@
 datalist(id='tickmarks')
   option(v-for='option, key in dataList' :value='option.value' :label='option.label')
 div.co-slider
-  coProgress(@mouseDown='clickHandler($event)' :bars='[bars[0], bars[1]]' :range='max' @select-element='selectHandler')
+  coProgress(:bars='[bars[0], bars[1]]' :range='max' @select-element='selectHandler')
   div.co-handle(v-if='handles' :style='{ left: value + "px" }')
   
 input(v-for='(bar, l) in bars' :key='l' type='range' v-model='bar[1]' :min='bar[0]' :max='max' list='tickmarks')
 </template>
 
 <script lang="ts">
+
+
+function stringToPercentage (string1: string, string2: string): string {
+  // Convert string to number
+  const convertedNumber1 = parseFloat(string1);
+  const convertedNumber2 = parseFloat(string2);
+  // Calculate the percentage
+  const percentage = convertedNumber1 / convertedNumber2 * 100;
+  // Return it with a % sign as a string
+  return percentage + '%';
+}
+
+function numberToPercentage (number1: number, number2: number): string {
+  // Calculate the percentage 
+  const percentage = number1 / number2 * 100;
+  return percentage + '%';
+}
 
 import { log } from '../../cosmos';
 
@@ -92,6 +109,23 @@ export default defineComponent({
       log('verbose', select);
       const mousePosition: number = select.event.offsetX;
       log('verbose', `mousePosition: ${mousePosition}`);
+      const element = select.element;
+      const target = select.event.target;
+      const targetWidth: number = target.clientWidth;
+      log('verbose', `target width: ${targetWidth}`);
+      switch (element) {
+        case 'progress':
+          log('verbose', 'clicked on progress');
+          // Check if start, end, or both points are movable, and then search through the bars array to find the value that is closest to the value calculated
+          break;
+        case 'bar':
+          log('verbose', 'clicked on bar');
+          break;
+        default:
+          // error state
+          break;
+      }
+      log('verbose', `mouse click percentage ${numberToPercentage(mousePosition, targetWidth)}`);
     }
   }
 });
