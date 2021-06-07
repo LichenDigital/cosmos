@@ -188,8 +188,9 @@ DEVELOPMENT NOTES:
   font-size: 1.4rem;
   color: inherit;
   line-height: 1.6;
+  margin-right: 1rem;
   
-  border: solid 2px transparent;
+  border: solid 2px black;
   outline: none;
 
   border-radius: 0;

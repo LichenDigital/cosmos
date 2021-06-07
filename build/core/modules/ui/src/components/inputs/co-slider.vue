@@ -6,7 +6,7 @@ div.co-slider
   coProgress(:bars='[bars[0], bars[1]]' :range='max' @select-element='selectHandler')
   div.co-handle(v-if='handles' :style='{ left: value + "px" }')
   
-input(v-for='(bar, l) in bars' :key='l' type='range' v-model='bar[1]' :min='bar[0]' :max='max' list='tickmarks')
+//- input(v-for='(bar, l) in bars' :key='l' type='range' v-model='bar[1]' :min='bar[0]' :max='max' list='tickmarks')
 </template>
 
 <script lang="ts">

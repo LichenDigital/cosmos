@@ -1,24 +1,36 @@
 <template lang="pug">
 .co-components.co-group
   h2.co-panel-label components
+
+
   h3 button
   component(v-for='component, l in components' :v-key='l', :is='component.type', :link='component.link') {{ component.contents[0] }}
-  coButton(@click='increment')
+  coButton(@click='increment') Test
+
+
   h3 textinput
   coTextInput(:lines='1')
   coTextInput(:lines='4')
+
+
   h3 checkbox
-  coCheckbox(:checkmark='"image"')
-  coCheckbox(:checkmark='"check"')
+  coCheckbox(:checkmark='"image"', :id='"check1"')
+  coCheckbox(:checkmark='"check"', :id='"check2"')
+
+
   h3 radiobutton
   coRadioButton(:group='"group1"', :value='1', :label='1')
   coRadioButton(:group='"group1"', :value='2', :label='2')
+
+
   h3 slider
   coSlider
+
+
   h3 progress
   //- Progress examples
   p single bar
-  coProgress(:bars='[[0, "40%"]]' :range='200' :progressBackground='"#f00"')
+  coProgress(:bars='[[0, "40%"]]' :range='200' :progressBackground='"#966"')
   p multiple bars in one progress
   //- pre coProgress(:bars='[[0, "10"], [40, "60%"], [250, 450], ["50%", "60%"]]' :range='90')
   coProgress(:bars='[[0, "10"], [40, "60%"], [250, 450], ["50%", "60%"]]' :range='90')
@@ -28,27 +40,70 @@
   //- div window width: {{ width }} x position: {{ xposition }}
   //- div window height: {{ height }} y position: {{ yposition }}
   coProgress(:bars='[[0, xposition], [width, width + yposition]]' :range='height + width')
+
+
   h3 loading
   coLoading
+
+
   h3 upload
+
+
   h3 datepicker
+
+
   h3 calendar
+
+
   h3 colorpicker
+
+
   h3 graph
+
+
   h3 heading
+
+
   h3 paragraph
+  coParagraph Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
   h3 link
+
+
   h3 quote
+
+
   h3 list
+
+
   h3 table
+
+
   h3 icon
+
+
   h3 image
+
+
   h3 video
+
+
   h3 audio
+
+
   h3 thumbnail
+
+
   h3 dropdown
+
+
   h3 navigation
+
+
   h3 map
+
+
 
 
 </template>
@@ -64,6 +119,7 @@ import coTextInput from '../co-inputs/co-textinput.vue';
 import coCheckbox from '../co-inputs/co-checkbox.vue';
 import coRadioButton from '../co-inputs/co-radiobutton.vue';
 import coSlider from '../co-inputs/co-slider.vue';
+import coParagraph from '../co-paragraph.vue';
 
 export default defineComponent({
   name: 'components',
@@ -74,7 +130,8 @@ export default defineComponent({
     coTextInput,
     coCheckbox,
     coRadioButton,
-    coSlider
+    coSlider,
+    coParagraph
   },
   data () {
     return {
@@ -116,10 +173,11 @@ export default defineComponent({
       // console.log(`yposition: ${this.yposition}`);
       this.xposition = event.clientX;
       // console.log(`xposition: ${this.xposition}`);
-    },
-    increment() {
-      this.$store.commit('increment');
-      console.log(this.$store.state.count);
+    }
+  },
+  computed : {
+    logEnabled(): any {
+      return this.$store.state.logEnabled;
     }
   },
   mounted() {

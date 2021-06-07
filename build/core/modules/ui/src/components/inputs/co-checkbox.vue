@@ -1,7 +1,10 @@
 <template lang="pug">
 div.co-checkbox
-  input(type='checkbox')
+  //- Visible, checkable, html input checkbox
+  input(:id='id' type='checkbox')
+  //- Overlayed icon for the checkbox (could support images if we wanted...)
   coIcon.co-checkmark(:icon='checkmark')
+label.co-label(:for="id") testasdfasd
 </template>
 
 <script lang="ts">
@@ -18,6 +21,10 @@ export default defineComponent({
     checkmark: {
       type: String,
       default: 'check'
+    },
+    id: {
+      type: String,
+      default: ''
     }
   }
 });
