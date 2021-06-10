@@ -1,5 +1,6 @@
 <template lang="pug">
-.co-log(v-if='logEnabled') log level: {{ logLevel }}
+.co-log(v-if='logEnabled') log level: {{ logLevel }} {{ logData}}
+button(@click='addLog') test
 div
   img.co-logo(alt='Vue logo' src='./assets/cosmos-combination-mark.svg')
 coEditor
@@ -24,8 +25,20 @@ export default defineComponent({
   data() {
     return {
       logLevel: logLevel,
-      logEnabled: logEnabled
     };
+  },
+  methods: {
+    addLog() {
+      this.$store.commit('addEntry', 'test');
+    }
+  },
+  computed: {
+    logEnabled() {
+      return this.$store.state.log.enabled;
+    },
+    logData() {
+      return this.$store.state.log.data;
+    }
   }
 });
 </script>

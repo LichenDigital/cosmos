@@ -2,7 +2,6 @@
 .co-components.co-group
   h2.co-panel-label components
 
-
   h3 button
   component(v-for='component, l in components' :v-key='l', :is='component.type', :link='component.link') {{ component.contents[0] }}
   coButton(@click='increment') Test
@@ -112,13 +111,13 @@
 
 import { defineComponent } from 'vue';
 
-import coButton from '../co-inputs/co-button.vue';
+import coButton from '../inputs/co-button.vue';
 import coProgress from '../co-progress.vue';
 import coLoading from '../co-loading.vue';
-import coTextInput from '../co-inputs/co-textinput.vue';
-import coCheckbox from '../co-inputs/co-checkbox.vue';
-import coRadioButton from '../co-inputs/co-radiobutton.vue';
-import coSlider from '../co-inputs/co-slider.vue';
+import coTextInput from '../inputs/co-textinput.vue';
+import coCheckbox from '../inputs/co-checkbox.vue';
+import coRadioButton from '../inputs/co-radiobutton.vue';
+import coSlider from '../inputs/co-slider.vue';
 import coParagraph from '../co-paragraph.vue';
 
 export default defineComponent({
@@ -173,11 +172,6 @@ export default defineComponent({
       // console.log(`yposition: ${this.yposition}`);
       this.xposition = event.clientX;
       // console.log(`xposition: ${this.xposition}`);
-    }
-  },
-  computed : {
-    logEnabled(): any {
-      return this.$store.state.logEnabled;
     }
   },
   mounted() {
