@@ -214,23 +214,24 @@ export default defineComponent({
 
 .progress {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 5rem;
+  height: 1rem;
 }
 .background {
   height: 100%;
-  width: 20rem;
+  width: 100%;
   background: #ccc;
 }
 .bar {
   position: absolute;
-  top: 50%;
+  top: 0;
   width: 0;
   background: rgba(0,0,0, .4);
-  height: 50%;
-  transform: translateY(-50%);
+  height: 100%;
+  // height: 50%;
+  // transform: translateY(-50%);
   // pointer-events: none;
   // transition: left .1s ease, width .3s ease;
 }

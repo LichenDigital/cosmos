@@ -4,7 +4,7 @@
 
   h3 button
   component(v-for='component, l in components' :v-key='l', :is='component.type', :link='component.link') {{ component.contents[0] }}
-  coButton(@click='increment') Test
+  coButton(@click='addEntry') Test
 
 
   h3 textinput
@@ -45,8 +45,8 @@
   coLoading
 
 
-  h3 upload
-
+  h3 files
+  coFiles
 
   h3 datepicker
 
@@ -80,7 +80,7 @@
 
 
   h3 icon
-
+  coIcon(:icon='"file"')
 
   h3 image
 
@@ -111,14 +111,16 @@
 
 import { defineComponent } from 'vue';
 
-import coButton from '../inputs/co-button.vue';
+import coButton from '../controls/co-button.vue';
 import coProgress from '../co-progress.vue';
 import coLoading from '../co-loading.vue';
-import coTextInput from '../inputs/co-textinput.vue';
-import coCheckbox from '../inputs/co-checkbox.vue';
-import coRadioButton from '../inputs/co-radiobutton.vue';
-import coSlider from '../inputs/co-slider.vue';
+import coTextInput from '../controls/co-textinput.vue';
+import coCheckbox from '../controls/co-checkbox.vue';
+import coRadioButton from '../controls/co-radiobutton.vue';
+import coSlider from '../controls/co-slider.vue';
 import coParagraph from '../co-paragraph.vue';
+import coFiles from '../controls/co-files.vue';
+import coIcon from '../co-icon.vue';
 
 export default defineComponent({
   name: 'components',
@@ -130,7 +132,9 @@ export default defineComponent({
     coCheckbox,
     coRadioButton,
     coSlider,
-    coParagraph
+    coParagraph,
+    coFiles,
+    coIcon
   },
   data () {
     return {
@@ -172,6 +176,9 @@ export default defineComponent({
       // console.log(`yposition: ${this.yposition}`);
       this.xposition = event.clientX;
       // console.log(`xposition: ${this.xposition}`);
+    },
+    addEntry() {
+      this.$store.commit('addEntry', 'test');
     }
   },
   mounted() {

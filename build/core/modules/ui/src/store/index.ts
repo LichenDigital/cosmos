@@ -5,12 +5,13 @@ export default createStore({
     log: {
       level: 'verbose',
       enabled: true,
-      data: ''
+      data: [] as string[]
     }
   },
   mutations: {
     addEntry(state, entry: string) {
-      state.log.data += entry;
+      state.log.data.push(entry);
+      console.log(entry);
     }
   },
   actions: {

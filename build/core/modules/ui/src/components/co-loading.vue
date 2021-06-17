@@ -5,6 +5,7 @@
 </template>
 
 <script lang="ts">
+// Think that progress should have a loading status, so that progress bars can indicate loading of something and then switch to a determined progress when that happens.
 
 import { defineComponent } from 'vue';
 

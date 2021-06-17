@@ -1,6 +1,5 @@
 <template lang="pug">
-.co-log(v-if='logEnabled') log level: {{ logLevel }} {{ logData}}
-button(@click='addLog') test
+coLog
 div
   img.co-logo(alt='Vue logo' src='./assets/cosmos-combination-mark.svg')
 coEditor
@@ -8,38 +7,20 @@ coEditor
 
 <script lang="ts">
 
-import { log, logLevel, logEnabled } from './cosmos';
-log('verbose', 'this is a verbose message');
-log('normal', 'this is a normal message');
-log('test', 'this shouldn\'t appear since test is in the log levels array');
-log('extraverbose', 'IT\'S OVER 9000!!!');
-
 import { defineComponent } from 'vue';
 import coEditor from './components/editor/co-editor.vue';
+import coLog from './components/co-log.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    coEditor
+    coEditor,
+    coLog
   },
   data() {
     return {
-      logLevel: logLevel,
     };
   },
-  methods: {
-    addLog() {
-      this.$store.commit('addEntry', 'test');
-    }
-  },
-  computed: {
-    logEnabled() {
-      return this.$store.state.log.enabled;
-    },
-    logData() {
-      return this.$store.state.log.data;
-    }
-  }
 });
 </script>
 
@@ -89,17 +70,5 @@ p {
   font-weight: bold;
   opacity: 40%;
   white-space: pre-wrap;
-}
-.co-log {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 9000;
-  background: white;
-  color: black;
-  padding: .2rem 1rem;
-  font-weight: bold;
-  border: 2px dashed black;
-  opacity: .5;
 }
 </style>
