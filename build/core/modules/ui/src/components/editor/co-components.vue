@@ -7,6 +7,10 @@
   coButton(@click='addEntry') Test
 
 
+  h3 dropdown
+  coDropdown
+
+
   h3 textinput
   coTextInput(:lines='1')
   coTextInput(:lines='4')
@@ -49,6 +53,7 @@
   coFiles
 
   h3 datepicker
+  coDatePicker
 
 
   h3 calendar
@@ -94,9 +99,6 @@
   h3 thumbnail
 
 
-  h3 dropdown
-
-
   h3 navigation
 
 
@@ -121,6 +123,8 @@ import coSlider from '../controls/co-slider.vue';
 import coParagraph from '../co-paragraph.vue';
 import coFiles from '../controls/co-files.vue';
 import coIcon from '../co-icon.vue';
+import coDatePicker from '../controls/co-datepicker.vue';
+import coDropdown from '../controls/co-dropdown.vue';
 
 export default defineComponent({
   name: 'components',
@@ -134,7 +138,9 @@ export default defineComponent({
     coSlider,
     coParagraph,
     coFiles,
-    coIcon
+    coIcon,
+    coDatePicker,
+    coDropdown
   },
   data () {
     return {
