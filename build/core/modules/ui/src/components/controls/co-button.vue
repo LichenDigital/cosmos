@@ -189,6 +189,9 @@ DEVELOPMENT NOTES:
   color: inherit;
   line-height: 1.6;
   margin-right: 1rem;
+  &:last-child {
+    margin-right: 0;
+  }
   
   border: solid 2px black;
   outline: none;

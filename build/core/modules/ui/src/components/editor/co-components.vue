@@ -60,6 +60,7 @@
 
 
   h3 colorpicker
+  coColorPicker
 
 
   h3 graph
@@ -125,6 +126,7 @@ import coFiles from '../controls/co-files.vue';
 import coIcon from '../co-icon.vue';
 import coDatePicker from '../controls/co-datepicker.vue';
 import coDropdown from '../controls/co-dropdown.vue';
+import coColorPicker from '../controls/co-colorpicker/co-colorpicker.vue';
 
 export default defineComponent({
   name: 'components',
@@ -140,7 +142,8 @@ export default defineComponent({
     coFiles,
     coIcon,
     coDatePicker,
-    coDropdown
+    coDropdown,
+    coColorPicker
   },
   data () {
     return {

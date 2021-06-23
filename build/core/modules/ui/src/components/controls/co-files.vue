@@ -3,6 +3,7 @@
   .file-management
     coButton Upload
     coButton Edit
+    coDropdown
   .files
     .file(v-for="file, index in files" :key="index")
       .preview
@@ -20,6 +21,7 @@ import { defineComponent } from 'vue';
 import coIcon from '../co-icon.vue';
 import coProgress from '../co-progress.vue';
 import coButton from './co-button.vue';
+import coDropdown from './co-dropdown.vue';
 
 export default defineComponent({
   props: {
@@ -29,7 +31,8 @@ export default defineComponent({
   components: {
     coIcon,
     coProgress,
-    coButton
+    coButton,
+    coDropdown
   },
   data() {
     return {
@@ -71,7 +74,7 @@ export default defineComponent({
   }
   .files {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
     column-gap: 1rem;

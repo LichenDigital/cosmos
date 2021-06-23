@@ -1,5 +1,5 @@
 <template lang="pug">
-label(for='standard-dropdown') Dropdown
+//- label(for='standard-dropdown') Dropdown
 .dropdown
   select(id='standard-dropdown')
     option(value='Option 1') Option 1
@@ -20,29 +20,35 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.dropdown {
+  display: grid;
+  grid-template-areas: 'select';
+  align-items: center;
+  
+  &::before {
+    grid-area: select;
+    justify-self: end;
+    content: '';
+    width: 1.2rem;
+    height: .75rem;
+    margin-right: 1rem;
+    background-color: black;    
+    clip-path: polygon(100% 0%, 0% 0%, 50% 100%);
+    pointer-events: none;
+  }
+}
 select {
-  position: relative;
+  grid-area: select;
   appearance: none;
   background: white;
   border: 2px solid black;
-  padding: 1rem;
+  padding: .5rem 1rem;
   width: 100%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: pointer;
-  line-height: inherit;
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  color: inherit;
+  line-height: 1.6;
   outline: none;
-
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
-    width: 1rem;
-    height: 1rem;
-    background-color: black;
-    // clip-path: polygon(100% 0%, 0% 0%, 50% 100%);
-  }
 
   &:focus,&:active {
     box-shadow: 0 0 0 2px #888;
