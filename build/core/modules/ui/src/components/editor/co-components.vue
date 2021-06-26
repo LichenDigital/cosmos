@@ -67,6 +67,12 @@
 
 
   h3 heading
+  coHeading(:content='"heading 1"' :type='"h1"')
+  coHeading(:content='"heading 2"' :type='"h2"')
+  coHeading(:content='"heading 3"' :type='"h3"')
+  coHeading(:content='"heading 4"' :type='"h4"')
+  coHeading(:content='"heading 5"' :type='"h5"')
+  coHeading(:content='"heading 6"' :type='"h7"')
 
 
   h3 paragraph
@@ -127,6 +133,7 @@ import coIcon from '../co-icon.vue';
 import coDatePicker from '../controls/co-datepicker.vue';
 import coDropdown from '../controls/co-dropdown.vue';
 import coColorPicker from '../controls/co-colorpicker/co-colorpicker.vue';
+import coHeading from '../co-heading.vue';
 
 export default defineComponent({
   name: 'components',
@@ -143,7 +150,8 @@ export default defineComponent({
     coIcon,
     coDatePicker,
     coDropdown,
-    coColorPicker
+    coColorPicker,
+    coHeading
   },
   data () {
     return {
@@ -170,6 +178,11 @@ export default defineComponent({
           contents: [
             'buttons'
           ]
+        },
+        { type: 'coButton',
+          contents: [
+            'hello'
+            ]
         }
       ],
       width: 0,

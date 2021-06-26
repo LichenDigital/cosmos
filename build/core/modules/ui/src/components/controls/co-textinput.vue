@@ -40,6 +40,11 @@ input, textarea {
   white-space: normal;
   margin-bottom: 1rem;
   font-family: sans-serif;
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &:focus {
     box-shadow: 0 0 0 2px #888;

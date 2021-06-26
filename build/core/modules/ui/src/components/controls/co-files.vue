@@ -74,7 +74,7 @@ export default defineComponent({
   }
   .files {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
     column-gap: 1rem;

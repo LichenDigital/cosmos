@@ -66,6 +66,10 @@ composition {
 
 # UI
 
+# Drag and drop inspiration
+https://supraniti.github.io/vue-dnd-zone/
+https://sortablejs.github.io/Vue.Draggable/#/transition-example
+
 
 ## Project setup
 ```
