@@ -97,10 +97,11 @@
   h3 image
 
 
-  h3 video
+  h3 media (audio)
+  coMedia
 
 
-  h3 audio
+  h3 media (video)
 
 
   h3 thumbnail
@@ -134,6 +135,7 @@ import coDatePicker from '../controls/co-datepicker.vue';
 import coDropdown from '../controls/co-dropdown.vue';
 import coColorPicker from '../controls/co-colorpicker/co-colorpicker.vue';
 import coHeading from '../co-heading.vue';
+import coMedia from '../co-media.vue';
 
 export default defineComponent({
   name: 'components',
@@ -151,7 +153,8 @@ export default defineComponent({
     coDatePicker,
     coDropdown,
     coColorPicker,
-    coHeading
+    coHeading,
+    coMedia
   },
   data () {
     return {
