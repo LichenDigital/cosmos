@@ -36,21 +36,22 @@ export default defineComponent({
       this.selected = option;
     },
     optionsPlacement() {
-      // Get location of the dropdown input
-      let location = this.$refs.dropdown.getBoundingClientRect();
-      // Calculate the distance to the window
-      let distance = {
-        top: location.top,
-        bottom: window.innerHeight - location.bottom,
-        left: location.left,
-        right: window.innerWidth - location.right,
-      }
-      console.log(distance);
-      // Set the display to block (while the visiblility is still false) so we can calculate the size of the dropdown
+      // FIXME: $REFS NOT CASTING PROPERLY...
+      // // Get location of the dropdown input
+      // let location = this.$refs.dropdown.getBoundingClientRect();
+      // // Calculate the distance to the window
+      // let distance = {
+      //   top: location.top,
+      //   bottom: window.innerHeight - location.bottom,
+      //   left: location.left,
+      //   right: window.innerWidth - location.right,
+      // }
+      // console.log(distance);
+      // // Set the display to block (while the visiblility is still false) so we can calculate the size of the dropdown
       this.optionsDisplay = true;
-      // Get the size of the options menu
-      let optionsSize = this.$refs.options.getBoundingClientRect();
-      console.log(optionsSize); 
+      // // Get the size of the options menu
+      // let optionsSize = this.$refs.options.getBoundingClientRect();
+      // console.log(optionsSize); 
     },
     optionsToggle() {
       // Check if options are visible. If not, then calculate placement before showing
@@ -93,7 +94,7 @@ select {
   appearance: none;
   background: white;
   border: 2px solid black;
-  padding: .5rem 1rem;
+  padding: .5rem 3.2rem .5rem 1rem ;
   width: 100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;
@@ -107,6 +108,7 @@ select {
 }
 .options {
   position: absolute; // Perhaps allow for this to be relatively positioned for people who want it inserted instead of on top of elements
+  z-index: 10;
   left: 0; top: calc(100% - 2px);
   width: 100%;
   background-color: white;

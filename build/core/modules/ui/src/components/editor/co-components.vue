@@ -4,8 +4,9 @@
 
   h3 button
   component(v-for='component, l in components' :v-key='l', :is='component.type', :link='component.link') {{ component.contents[0] }}
-  coButton(@click='addEntry') Test
+  coButton(@click='addEntry' co-draggable) Test
 
+  video(src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4' style='width: 100%; margin-top: 1rem;' co-draggable autoplay loop muted)
 
   h3 dropdown
   coDropdown
@@ -72,7 +73,7 @@
   coHeading(:content='"heading 3"' :type='"h3"')
   coHeading(:content='"heading 4"' :type='"h4"')
   coHeading(:content='"heading 5"' :type='"h5"')
-  coHeading(:content='"heading 6"' :type='"h7"')
+  coHeading(:content='"heading 6"' :type='"h6"')
 
 
   h3 paragraph
@@ -118,7 +119,6 @@
 </template>
 
 <script lang="ts">
-
 import { defineComponent } from 'vue';
 
 import coButton from '../controls/co-button.vue';
@@ -212,13 +212,41 @@ export default defineComponent({
     this.height = window.innerHeight;
     // Set mouse move event
     document.addEventListener('mousemove', this.mouseMoved);
+
+    // Drag and drop testing
+    let dragging = false;
+    let draggableItems = document.querySelectorAll('*[co-draggable]');
+    if (draggableItems) {
+      for (let l = 0; l < draggableItems.length; l++) {
+        console.log(draggableItems[l]);
+        // Listen for mouse down
+        draggableItems[l].addEventListener('mousedown', function(event){
+          console.log('mousedown');
+          console.log(event);
+        });
+        // Listen for mouse move
+        draggableItems[l].addEventListener('mousemove', function(event) {
+          console.log('mousemove');
+          console.log(event);
+        });
+        draggableItems[l].addEventListener('mouseup', function(event) {
+          console.log('mouseup');
+          console.log(event);
+        });
+        // Listen for mouse up
+      }
+    }
   }
 })
+
 </script>
 
 <style lang="scss" scoped>
 .co-components {
   width: 35%;
   background-color: #e1e1e1;
+  @media (max-width: 31.25em) {
+    width: 100%
+  }
 }
 </style>

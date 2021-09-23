@@ -28,6 +28,9 @@ export default {
 .co-style {
   width: 25%;
   background: #444;
+  @media (max-width: 31.25em) {
+    width: 100%;
+  }
 }
 
 .co-style-editor {

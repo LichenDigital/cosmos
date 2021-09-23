@@ -14,5 +14,8 @@ export default {
   .co-workspace {
     width: 40%;
     background: #eee;
+    @media (max-width: 31.25em) {
+      width: 100%;
+    }
   }
 </style>

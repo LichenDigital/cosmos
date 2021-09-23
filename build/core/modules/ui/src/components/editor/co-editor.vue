@@ -25,6 +25,9 @@ export default {
     display: flex;
     min-height: 100vh;
     width: 100%;
+    @media (max-width: 31.25em) {
+      flex-direction: column;
+    }
   }
 
 </style>
