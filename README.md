@@ -5,5 +5,5 @@ cosmos is a distributed, open source, cross platform application framework and e
 
 cosmos = ∞
 
-## [Read the Documentation Here](/documentation/doc.md)
+## [Read the Documentation Here](/documentation/documentation.md)
 Take a deep dive into the documentation here.

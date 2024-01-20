@@ -1,55 +1,3 @@
-#if defined (__linux__) || defined (__linux) || defined (__gnu_linux)
-
-#include "../src/linux/ipc.h"
-#include "stdint.h"
-
-#elif defined (_unix)  || defined (__unix__)
-
-#elif defined (__APPLE__)  || defined (__MACH__)
-
-#elif defined (_WIN32) || defined (__WIN32) || defined (__WIN32__)
-
-#elif defined (_WIN64) || defined (__WIN64) || defined (__WIN64__)
-
-#elif defined (__AVR_ATtiny85__)
-
-#elif defined (__AVR_ATmega168__)
-
-#elif defined (__AVR_ATmedga328P__)
-
-#elif defined (__AVR_ATmega1280__)
-
-#elif defined (__AVR_ATmega2560__)
-
-#elif defined (__AVR_ATmega32U4)
-
-#elif defined (__SAM3x8e__)
-
-#elif defined (__CYGWWIN__)
-
-#elif defined (__CYGWIN32__)
-
-#elif defined (__sun) || defined (__SVR4) || defined (__sun__)  || defined (__SUNOS) || defined (__svr4__)
-
-#elif defined (__hpux)
-
-#elif defined (_AIX)
-
-#elif defined (i386) || (__i386) || (__i386__)
-
-#elif defined (__amd64__) || (__amd64) || (__x86_64__) || (__x86_64)
-
-#elif defined (__arm)
-
-#elif defined (__aarch64__)
-
-#elif defined 
-
-#else
-
-#endif
-
-
 /*** Data types ***/
 
 /* Defines the structure of the protocol used for node communication.
@@ -58,7 +6,6 @@ Protocol attributes set using this datatype ensure compatability between nodes.
 A robust and simple protocol is critical to ensure that nodes running different
 versions of Cosmos can contentedly talk to eachother.
 */
-typedef struct protocol {};
 
 /* Defines the structure of a session 
 
