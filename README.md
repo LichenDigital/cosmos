@@ -5,5 +5,8 @@ cosmos is a distributed, open source, cross platform application framework and e
 
 cosmos = ∞
 
-## [Read the Documentation Here](/documentation/documentation.md)
-Take a deep dive into the documentation here.
+## Software Documentation
+Take a deep dive into the [documentation](documentation/documentation.md). It's a work in progress and will be largely built out before cosmos is. It's documentation first nature, allows for the guidance in the development of cosmos.
+
+## Hardware
+cosmos is not just a software platform. It is also a slew of open source hardware that follows a wholistic philosophy: develop usabile, repairable, feature rich, accessible, extensible, and beautiful hardware that is environmentally friendly. We're working to have our cake and eat it too.
