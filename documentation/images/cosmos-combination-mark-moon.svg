@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   viewBox="0 0 479.63755 148.69413"
+   viewBox="0 0 480.00001 149.99998"
    version="1.1"
    id="svg5"
-   sodipodi:docname="cosmos-combination-mark-background-image.svg"
-   width="479.63754"
-   height="148.69415"
+   sodipodi:docname="cosmos-combination-mark-moon.svg"
+   width="480"
+   height="150"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    xml:space="preserve"
+   inkscape:export-filename="cosmos-combination-mark-moon-test.jpg"
+   inkscape:export-xdpi="500"
+   inkscape:export-ydpi="500"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,8 +46,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.5477173"
-     inkscape:cx="125.34589"
-     inkscape:cy="168.63545"
+     inkscape:cx="218.38614"
+     inkscape:cy="110.48529"
      inkscape:window-width="1496"
      inkscape:window-height="827"
      inkscape:window-x="0"
@@ -53,19 +56,19 @@
      inkscape:current-layer="svg5"
      showgrid="false" /><title
      id="title1">Asset 1</title><rect
-     width="100%"
+     width="99.999992%"
      height="100.00002%"
      fill="#ffffff"
      id="rect1"
-     x="0"
-     y="48.694153"
-     style="stroke-width:1.00002"
-     inkscape:label="white-background" /><metadata
+     x="1.5258789e-05"
+     y="-7.6293945e-06"
+     style="stroke-width:1.00002;fill:#000000"
+     inkscape:label="background" /><metadata
      id="metadata5"><rdf:RDF><cc:Work
          rdf:about=""><dc:title>Asset 1</dc:title></cc:Work></rdf:RDF></metadata><image
      width="233.30779"
      height="491.79544"
-     preserveAspectRatio="none"
+     preserveAspectRatio="xMidYMid"
      style="display:inline;image-rendering:optimizeQuality"
      xlink:href="moon-small.jpg"
      id="image1"
