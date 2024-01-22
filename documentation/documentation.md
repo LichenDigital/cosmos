@@ -84,6 +84,9 @@ Used for building beautiful, cross platform, reactive and connected user interfa
 **[validation](./modules/validation.md)**
 Tools for validating data, such as form inputs or API request payloads.
 
+## Software Development Methodology
+The development of cosmos will take a lot of effort, thought, and careful planning. In order to guide this endeavor we've got a [document](software-development.md) that outlines our design and development philosophy, ideas, and questions.
+
 
 ## Modules that will be built into lichen:
 
@@ -148,25 +151,4 @@ Tools for validating data, such as form inputs or API request payloads.
   - volume
   - mass
   - length
-
-
-#Data Protocol
-
-```
-time [ time, date, timezone ]
-location [ coordinates, reference, position, direction ]
-units {
-    length : {
-        metric: [ mm, cm, m, km ],
-        imperial: [ in, ft, yd, mi ]
-        conversion: []      
-    },
-    volume: {
-        metric: []
-        imperial: []
-    }
-
-}
-
-```
 
