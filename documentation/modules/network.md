@@ -3,27 +3,28 @@ ___
 
 # *Network*
 
-The network module transmits data over a variety of software and hardware protocols. Software wise, it handles both high bandwidth protocols like `https` and `tcp` as well as low bandwidth protocols lke `i2c` and `serial`. Hardware wise, cosmos has the capability to transmit data over typical means like `wifi`, `lan`, and `wan` as well as less typical means like `light`
+The network module transmits data over a variety of software and hardware protocols. Software wise, it handles both high bandwidth protocols like `https`, `udp` and `tcp` as well as low bandwidth protocols lke `i2c` and `serial`. Hardware wise, cosmos has the capability to transmit data over typical means like `wifi`, `bluetooth`, and `celular`. Initially the networking protocol will be built with diffrent adapters like `zmq` or something similar to take care of a lot of the hard low-level work.
 
-// Initialize a Cosmos connection
-function connect (node, transport) {
-	
-}
+## Sub-modules
 
-// Destroy a Cosmos connection
-function disconnect () {
-	
-}
+- **transport** - Handles different transports
+- **filter** - Filters network traffic - utilizes the event module
+- **log** - Logs network traffice - utilizes the log module
+- **address** - Handles the addressing of cosmos nodes and other external nodes
 
-// Sends data to Cosmos over the connection provided
-funtion send (connection, payload) {
-	
-}
+## Commands for a transport
 
-// Recieves data from Cosmos over the connection provided
-function recieve (connection) {
-	
-}
+- **create**, **crt**: Creates a resource
+- **get**: Gets a resource
+- **update**, **upt**: Updates a resource
+- **delete**, **dlt**: Deletes a resource
+- **duplicate**: **dup**: Duplicates a resource (uses get and create)
+- **connect**, **con**: Connects a resource to another resource
+- **disconnect**, **dsc**: Disconnects a resource from another resource
+- **send**: **snd**: Sends a resource
+- **receive**: **rcv**: Recieves a resource
+
+
 
 Built In Character Command Protocol Formatting (extensible):
 	
