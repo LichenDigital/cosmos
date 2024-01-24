@@ -1,3 +1,6 @@
+< **[Back to documentation main](documentation.md)**
+___
+
 ## Development Priorities and Goals
 
 ### Structure
@@ -254,3 +257,67 @@ Center:
 \\\
 |||
 ```
+
+## Modules that will be built into lichen:
+
+- commerce
+- production
+- inventory
+- time
+  - calendar
+  - scheduling
+  - timetracking
+  - timer
+  - stopwatch
+- location
+  - map
+  - direction
+    - land
+    - sea
+    - air
+
+- science
+  - climate
+  - biology
+  - geological
+  
+- engineering
+  - simulation
+  - CAD
+    - hybrid
+      - 2D
+      - 3D
+
+- medical
+  - monitor
+    - pulse
+    - bloodpressure
+    - glucose
+    - temperature
+    - bloodoxygen
+
+- sense
+  - light
+
+- control
+  - temperature
+  - motion
+  - humidity
+  - light
+  - pressure
+  - flow
+
+- art
+
+- web
+  - sever
+  - html
+  - css
+  - javascript
+
+- notify
+
+- measure
+  - volume
+  - mass
+  - length
