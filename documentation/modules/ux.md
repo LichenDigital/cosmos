@@ -90,4 +90,8 @@ Loading and progress spinners and bars will be inspired by https://www.npmjs.com
        
 ```
 
-#
+### Accessibility
+Ensures that applications built with cosmos are accessible to people with disabilities. This include tools and guidelines for adhering to accessibility standards.
+
+### Globalization
+Supports internationalization and localization for multi-language applications.

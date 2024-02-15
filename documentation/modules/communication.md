@@ -1,7 +1,9 @@
 < **[Back to documentation main](../documentation.md)**
 ___
 
-# *Network*
+# *Communication*
+
+## Networking
 
 The network module transmits data over a variety of software and hardware protocols. Software wise, it handles both high bandwidth protocols like `https`, `udp` and `tcp` as well as low bandwidth protocols lke `i2c` and `serial`. Hardware wise, cosmos has the capability to transmit data over typical means like `wifi`, `bluetooth`, and `celular`. Initially the networking protocol will be built with diffrent adapters like `zmq` or something similar to take care of a lot of the hard low-level work.
 
@@ -59,3 +61,8 @@ module='ssh', payload='-p 2200 cosmos@cosmos.com'
 module="ssh", payload="-p 2200 cosmos@cosmos.com"
 
 ssh -p 2200 cosmos@cosmos.com 
+
+
+## Messaging
+
+Message supports sending data (be it text or other forms of data) through different forms of messaging methods. It supports SMS, email, and other message protocols. We'll have to figure out a module for voice communication, and how to do things like text over voice, and voice over text etc.
