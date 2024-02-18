@@ -3,6 +3,29 @@ ___
 
 ## Development Priorities and Goals
 
+**Simplify the Development Process**
+-- Intuitive APIs and Frameworks: Design cosmos with simplicity in mind. Intuitive APIs, clear documentation, and straightforward frameworks can lower the barrier to entry for new developers.
+- Low-Code/No-Code Tools: Consider incorporating low-code or no-code interfaces for common tasks within cosmos, making technology creation accessible to non-programmers.
+
+**Foster a Supportive Community**
+- Inclusive Community Building: Create a welcoming, inclusive community around cosmos. Offer resources, forums, and support channels where users can learn from each other, share experiences, and collaborate on projects.
+- Education and Training: Provide tutorials, guides, and educational resources tailored to different skill levels, from beginners to advanced developers. Workshops and webinars can also be effective in engaging the community.
+
+**Ensure Broad Accessibility**
+- Accessibility Standards: Ensure that the tools and applications developed with cosmos adhere to accessibility standards, making technology usable for people with disabilities.
+- Internationalization: Support multiple languages and cultural considerations in your framework and documentation to make cosmos accessible to a global audience.
+
+**Leverage Open Source**
+- Open Source Model: Adopting an open-source model for cosmos can accelerate its democratization goals. Open source encourages collaboration, innovation, and transparency, allowing anyone to contribute, modify, and distribute the technology.
+- Modular Design: A modular design allows developers to use only what they need, making cosmos adaptable to various projects and reducing the learning curve for new users.
+
+**Promote Ethical Technology Use**
+- Ethical Guidelines: Establish and promote ethical guidelines for using cosmos. Encourage developers to consider the societal impact of their technologies and strive for positive contributions.
+- Responsible AI Integration: As AI becomes an integral part of technology development, provide guidance and tools within cosmos for responsible AI use, emphasizing fairness, privacy, and transparency.
+
+cosmos priortizes technological democratization. Through it's wide array of powerful and accessible tools, we seek to empower individuals and communities and foster innovation and inclusivity. cosmos will be a catalyst for positive change in the tech ecosystem.
+
+
 ### Structure
 
 The core of cosmos will have as few external dependencies as possible, only using them when something very specific, complex, and difficult is being achieved (media transcoding for example). Striving to minimize these dependencies will keep cosmos simpler, and easier to maintain and keep secure. Writing the system to be functionally modular and cross platform will provide it the ability to run on simple processors like 8-bit microcontrollers (an effort should be made to eventually write code to support even simpler hardware such as 4, 2, or even 1 bit processors), and retain as much functionality as that that chip can accomodate. Even though Cosmos will have the ability to run by itself on bare metal, it will also have the ability to be run on top of other operating systems, or run foreign operating systems upon itself (through virtualization / containerization). Cosmos processes will be able to communicate how much of a load they are placing on the system, and be able to auto-negotiate hardware usage. There will be modules written that would provide this functionality. Conceptually, those modules would monitor Cosmos processing usage statistics and start, stop, create, or destroy worker processors. 
