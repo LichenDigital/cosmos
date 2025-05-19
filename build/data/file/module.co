@@ -1,0 +1,115 @@
+name = 'file'
+alternate-names = [ 'f' ]
+description = 'File management'
+
+data-definition = file [
+    id = co.id[id.id]
+    hash = co.hash[hash.hash]
+    name = string
+    location = string
+    type = string
+    size = number
+    auth = object
+    metadata = object
+    data = object
+]
+
+commands = (
+    create,
+    get,
+    update,
+    delete,
+
+    # Location
+    duplicate,
+    move,
+    copy,
+    paste,
+
+    # Metadata
+    rename,
+
+    # Access
+    lock,
+    unlock,
+    
+    # Data manipulation
+    append,
+    prepend,
+    insert,
+
+    # Encryption
+    hash,
+    encrypt,
+    decrypt,
+
+    # Compression
+    compress,
+    decompress,
+
+    # Versioning
+    snapshot,
+    revert,
+    restore,
+    diff,
+    merge,
+)
+
+command create
+inputs = (
+    'name' | file[name],
+    'location' | file[location],
+    'type' | file[type],
+    'size' | file[size],
+    'metadata' | file[metadata],
+    'data' | file[data],
+)
+outputs = (
+    file[id],
+    file[hash],
+)
+
+command get
+inputs = (
+    'id' | file[id],
+    'location' | file[location],
+)
+
+command update
+inputs = (
+    'id' | file[id],
+    'name' | file[name],
+    'location' | file[location],
+    'type' | file[type],
+    'size' | file[size],
+    'metadata' | file[metadata],
+    'data' | file[data],
+)
+
+command duplicate
+inputs = (
+    'id' | file[id],
+    'location' | file[location],
+)
+
+command rename
+run = update('name')
+
+command lock
+run = update('lock')
+
+command unlock
+run = update('unlock')
+
+
+
+/* Subsets */
+
+read
+
+write
+
+/* Datatypes
+  This section of the memory module performs the critical
+  job of ensuring consistent data type sizes accross platforms
+*/

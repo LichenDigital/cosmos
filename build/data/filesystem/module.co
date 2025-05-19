@@ -1,0 +1,33 @@
+name = 'filesystem'
+alternate-names = [
+    'fs',
+]
+
+description = 'File and file system management'
+data-definition = file [
+    id = co[id.id]
+    name = string
+    location = string
+    type = string
+    size = number
+    metadata = object
+    data = object
+]
+
+commands = [
+    # File system core commands
+    create,
+    get,
+    update,
+    delete,
+    move,
+    duplicate,
+    rename,
+
+    search,
+    ownership,
+    permissions,
+    status,
+]
+
+
