@@ -1,0 +1,50 @@
+{
+  "name": "Cosmos Module",
+  "scopeName": "source.cosmos-module",
+  "fileTypes": ["co"],
+  "patterns": [
+    {
+      "name": "keyword.other.module-property.cosmos",
+      "match": "\\b(name|alternate-names|description|version|dependencies|errors|data-definition|commands)\\b"
+    },
+    {
+      "name": "keyword.control.command.cosmos",
+      "match": "\\b(command)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+      "captures": {
+        "1": {"name": "keyword.control.cosmos"},
+        "2": {"name": "entity.name.function.cosmos"}
+      }
+    },
+    {
+      "name": "keyword.other.command-property.cosmos",
+      "match": "\\b(inputs|outputs|performance|run|expected_latency)\\b"
+    },
+    {
+      "name": "string.quoted.single.cosmos",
+      "begin": "'",
+      "end": "'",
+      "patterns": [{"name": "constant.character.escape.cosmos", "match": "\\\\."}]
+    },
+    {
+      "name": "comment.line.hash.cosmos",
+      "match": "#.*$"
+    },
+    {
+      "name": "comment.block.cosmos",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    {
+      "name": "constant.numeric.cosmos",
+      "match": "\\b\\d+(\\.\\d+)?\\b"
+    },
+    {
+      "name": "support.type.cosmos",
+      "match": "\\b(string|number|object|boolean|array)\\b"
+    },
+    {
+      "name": "constant.language.cosmos",
+      "match": "\\b(async|sync|low|medium|high|required|optional)\\b"
+    }
+  ]
+}

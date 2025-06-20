@@ -1,0 +1,19 @@
+{
+  "name": "cosmos-syntax",
+  "displayName": "Cosmos Module Syntax",
+  "version": "0.1.0",
+  "engines": {"vscode": "^1.0.0"},
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [{
+      "id": "cosmos-module",
+      "aliases": ["Cosmos Module"],
+      "extensions": [".co"]
+    }],
+    "grammars": [{
+      "language": "cosmos-module",
+      "scopeName": "source.cosmos-module",
+      "path": "./syntaxes/cosmos-module.tmLanguage.json"
+    }]
+  }
+}
